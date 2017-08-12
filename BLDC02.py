@@ -3,7 +3,9 @@ import pigpio
 from read_RPM import reader
 import RPi.GPIO as GPIO
 import QuadNumeric
-from msvcrt import getch
+import sys
+import termios
+import contextlib
 
 # Set up BCM GPIO numbering
 GPIO.setmode(GPIO.BCM)
