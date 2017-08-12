@@ -18,12 +18,7 @@ ESC_GPIO = 13
 try:
     while 1:
         speed = 1.5
-        # Loop through pins to return value of BCD counter
-        #for pin in BCD:
-            # Left shift speed then OR by negated pin value
-        #    speed = (speed << 1) | (1 ^ GPIO.input(pin))
-
-        # Set ESC speed via PWM
+		
 		key = ord(getch())
 		
 		if key == 72:
