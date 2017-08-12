@@ -36,7 +36,7 @@ try:
 
 
         
-        sleep(100)
+        sleep(10000)
 
 finally:
     pi.set_servo_pulsewidth(ESC_GPIO, 0) # Stop servo pulses.
