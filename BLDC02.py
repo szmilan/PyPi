@@ -22,22 +22,3 @@ sleep(2)
 BCD = [16,20,21]
 for pin in BCD:
     GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-try:
-    while 1:
-        speed = 1
-        # Loop through pins to return value of BCD counter
-        #for pin in BCD:
-            # Left shift speed then OR by negated pin value
-        #    speed = (speed << 1) | (1 ^ GPIO.input(pin))
-
-        # Set ESC speed via PWM
-        pi.set_servo_pulsewidth(ESC_GPIO, speed * 1000 / 7 + 1000)
-
-
-        
-        sleep(1000)
-
-finally:
-    pi.set_servo_pulsewidth(ESC_GPIO, 0) # Stop servo pulses.
-    pi.stop() # Disconnect pigpio.
