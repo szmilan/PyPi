@@ -21,7 +21,7 @@ try:
     while 1:
         speed = 1.5		
 	key = sys.stdin.read(1)
-	if chr(key) == 72:
+	if key == 72:
 		pi.set_servo_pulsewidth(ESC_GPIO, speed * 1000 / 7 + 1000)        
         sleep(100)
 
