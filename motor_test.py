@@ -10,7 +10,7 @@ mymotor = motor('m1', 17, simulation=False)
 
 print('***Disconnect ESC power')
 print('***then press ENTER')
-res = raw_input()
+res = input()
 mymotor.start()
 mymotor.setW(100)
 
@@ -25,7 +25,7 @@ mymotor.setW(0)
 print('***Wait N beep for battery cell')
 print('***Wait beeeeeep for ready')
 print('***then press ENTER')
-res = raw_74input()
+res = raw_input()
 print ('increase > a | decrease > z | save Wh > n | set Wh > h|quit > 9')
 
 cycling = True
