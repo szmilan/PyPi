@@ -17,7 +17,7 @@ ESC_GPIO = 13
 # Set up input pins for thumbwheel switch
 try:
     while 1:
-        speed = 1
+        speed = 1.5
         # Loop through pins to return value of BCD counter
         #for pin in BCD:
             # Left shift speed then OR by negated pin value
