@@ -10,7 +10,7 @@ mymotor = motor('m1', 17, simulation=False)
 
 print('***Disconnect ESC power')
 print('***then press ENTER')
-res = input()
+res = raw_input()
 mymotor.start()
 mymotor.setW(100)
 
