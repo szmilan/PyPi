@@ -17,13 +17,10 @@ ESC_GPIO = 13
 # Set up input pins for thumbwheel switch
 try:
     while 1:
-        speed = 1.5
-		
-		key = ord(getch())
-		
+        speed = 1.5		
+		key = ord(getch())		
 		if key == 72:
-			pi.set_servo_pulsewidth(ESC_GPIO, speed * 1000 / 7 + 1000)
-        
+			pi.set_servo_pulsewidth(ESC_GPIO, speed * 1000 / 7 + 1000)        
         sleep(100)
 
 finally:
