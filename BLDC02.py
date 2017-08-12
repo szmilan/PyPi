@@ -3,7 +3,7 @@ import pigpio
 from read_RPM import reader
 import RPi.GPIO as GPIO
 import QuadNumeric
-
+from msvcrt import getch
 
 # Set up BCM GPIO numbering
 GPIO.setmode(GPIO.BCM)
@@ -24,9 +24,12 @@ try:
         #    speed = (speed << 1) | (1 ^ GPIO.input(pin))
 
         # Set ESC speed via PWM
-        pi.set_servo_pulsewidth(ESC_GPIO, speed * 1000 / 7 + 1000)
+		key = ord(getch())
+		
+		if key == 72:
+			pi.set_servo_pulsewidth(ESC_GPIO, speed * 1000 / 7 + 1000)
         
-        sleep(1000)
+        sleep(100)
 
 finally:
     pi.set_servo_pulsewidth(ESC_GPIO, 0) # Stop servo pulses.
