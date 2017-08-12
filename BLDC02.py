@@ -2,17 +2,13 @@ from time import sleep
 import pigpio
 from read_RPM import reader
 import RPi.GPIO as GPIO
- 
-# Import & initialize 4 digit 7 segment I2C display
 import QuadNumeric
-display = QuadNumeric.QuadNumeric(address=0x70, busnum=1)
- 
-# Optionally for Adafruit LED backpack hardware use:
-# from Adafruit_LED_Backpack import SevenSegment
-# display = SevenSegment.SevenSegment()
 
+# Initialize 4 digit 7 segment I2C display
+display = QuadNumeric.QuadNumeric(address=0x70, busnum=1)
 display.begin()
 display.set_brightness(0)
+
 
 # Set up BCM GPIO numbering
 GPIO.setmode(GPIO.BCM)

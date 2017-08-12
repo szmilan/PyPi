@@ -101,15 +101,14 @@ if __name__ == "__main__":
 
    import time
    import pigpio
-   import read_RPM
 
-   RPM_GPIO = 4
+   RPM_GPIO = 21
    RUN_TIME = 60.0
    SAMPLE_TIME = 2.0
 
    pi = pigpio.pi()
 
-   p = read_RPM.reader(pi, RPM_GPIO)
+   p = reader(pi, RPM_GPIO)
 
    start = time.time()
 
