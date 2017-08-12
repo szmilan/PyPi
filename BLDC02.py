@@ -13,10 +13,6 @@ pi = pigpio.pi()
 
 # Calibrate ESC
 ESC_GPIO = 13
-pi.set_servo_pulsewidth(ESC_GPIO, 2000) # Maximum throttle.
-sleep(2)
-pi.set_servo_pulsewidth(ESC_GPIO, 1000) # Minimum throttle.
-sleep(2)
 
 # Set up input pins for thumbwheel switch
 try:
@@ -29,8 +25,6 @@ try:
 
         # Set ESC speed via PWM
         pi.set_servo_pulsewidth(ESC_GPIO, speed * 1000 / 7 + 1000)
-
-
         
         sleep(1000)
 
