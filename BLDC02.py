@@ -28,11 +28,6 @@ BCD = [16,20,21]
 for pin in BCD:
     GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-# Set up RPM reader
-RPM_GPIO = 14
-SAMPLE_TIME = 2.0
-tach = reader(pi, RPM_GPIO)
-
 try:
     while 1:
         speed = 0
@@ -44,18 +39,10 @@ try:
         # Set ESC speed via PWM
         pi.set_servo_pulsewidth(ESC_GPIO, speed * 1000 / 7 + 1000)
 
-        # Read RPM
-        rpm = tach.RPM()
 
-        # Show RPM on LED Display
-        display.clear()
-        display.print_float(rpm)
-        display.write_display()
         
         sleep(SAMPLE_TIME)
 
 finally:
     pi.set_servo_pulsewidth(ESC_GPIO, 0) # Stop servo pulses.
     pi.stop() # Disconnect pigpio.
-    display.clear() # Clear 7 segment LED display
-    display.write_display()
