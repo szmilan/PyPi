@@ -25,7 +25,7 @@ for pin in BCD:
 
 try:
     while 1:
-        speed = 0
+        speed = 1
         # Loop through pins to return value of BCD counter
         #for pin in BCD:
             # Left shift speed then OR by negated pin value
@@ -36,7 +36,7 @@ try:
 
 
         
-        sleep(10000)
+        sleep(1000)
 
 finally:
     pi.set_servo_pulsewidth(ESC_GPIO, 0) # Stop servo pulses.
