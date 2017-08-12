@@ -27,9 +27,9 @@ try:
     while 1:
         speed = 0
         # Loop through pins to return value of BCD counter
-        for pin in BCD:
+        #for pin in BCD:
             # Left shift speed then OR by negated pin value
-            speed = (speed << 1) | (1 ^ GPIO.input(pin))
+        #    speed = (speed << 1) | (1 ^ GPIO.input(pin))
 
         # Set ESC speed via PWM
         pi.set_servo_pulsewidth(ESC_GPIO, speed * 1000 / 7 + 1000)
